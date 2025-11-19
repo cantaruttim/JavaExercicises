@@ -1,0 +1,9 @@
+{
+  "orders": [
+    { "id": 1, "price": 100.50, "type": "NATIONAL" },
+    { "id": 2, "price": 200.75, "type": "INTERNATIONAL" },
+    { "id": 3, "price": 150.00, "type": "NATIONAL" },
+    { "id": 4, "price": 300.25, "type": "INTERNATIONAL" },
+    { "id": 5, "price": 250.00, "type": "NATIONAL" }
+  ]
+}
