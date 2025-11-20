@@ -3,12 +3,10 @@ import PurchaseOrder.model.NationalOrder;
 import PurchaseOrder.model.OrderProcessor;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         IO.println("EXERCISE 2");
         IO.println("Strategy Report System");
-
-
 
         IO.println("================================");
         IO.println("EXERCISE 1");
