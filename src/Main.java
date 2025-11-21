@@ -13,6 +13,11 @@ import java.nio.file.Paths;
 public class Main {
     public static void main(String[] args) {
 
+        IO.println("EXERCISE 3");
+        IO.println("Bank Transfer");
+
+        /*
+
         IO.println("EXERCISE 2");
         IO.println("Strategy Report System");
 
@@ -46,7 +51,6 @@ public class Main {
 
 
 
-        /*
         IO.println("================================");
         IO.println("EXERCISE 1");
         IO.println("Purchased Order System");
