@@ -1,9 +1,14 @@
 import PurchaseOrder.model.InternationalOrder;
 import PurchaseOrder.model.NationalOrder;
 import PurchaseOrder.model.OrderProcessor;
+import StrategyReport.Interface.ReportGenerator;
 import StrategyReport.Reports.CSVReport;
 import StrategyReport.Reports.JsonReport;
 import StrategyReport.Reports.XMLReport;
+import StrategyReport.model.ServiceReport;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +16,9 @@ public class Main {
         IO.println("EXERCISE 2");
         IO.println("Strategy Report System");
 
-        String fileName = "dados.csv";
+        String fileName = "src/resources/exempleFiles/dados.csv";
+        ServiceReport service = new ServiceReport(fileName);
+        ReportGenerator generator = null;
 
         // file format etx
         String etx = fileName.substring(fileName.length() - 3 );
@@ -20,14 +27,14 @@ public class Main {
 
             case "csv":
                 // instantiate java class
-                new CSVReport();
+                generator = new CSVReport();
                 break;
             case "json":
                 // instantiate java class
-                new JsonReport();
+                generator = new JsonReport();
                 break;
             case "xml":
-                new XMLReport();
+                generator = new XMLReport();
                 // instantiate java class
                 break;
 
@@ -35,6 +42,9 @@ public class Main {
                 IO.println("etx not supported");
                 break;
         }
+
+        generator.generateReport(fileName);
+
 
         /*
         IO.println("================================");
