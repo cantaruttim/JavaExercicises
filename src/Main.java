@@ -16,34 +16,34 @@ public class Main {
         IO.println("EXERCISE 2");
         IO.println("Strategy Report System");
 
-        String fileName = "src/resources/exempleFiles/dados.csv";
+        String endFile = ".json";
+        String fileName = "src/resources/exempleFiles/dados" + endFile;
         ServiceReport service = new ServiceReport(fileName);
         ReportGenerator generator = null;
 
-        // file format etx
-        String etx = fileName.substring(fileName.length() - 3 );
+        try {
+            String lower = fileName.toLowerCase();
 
-        switch (etx) {
-
-            case "csv":
-                // instantiate java class
+            if (lower.endsWith(".csv")) {
                 generator = new CSVReport();
-                break;
-            case "json":
-                // instantiate java class
-                generator = new JsonReport();
-                break;
-            case "xml":
-                generator = new XMLReport();
-                // instantiate java class
-                break;
 
-            default:
-                IO.println("etx not supported");
-                break;
+            } else if (lower.endsWith(".json")) {
+                generator = new JsonReport();
+
+            } else if (lower.endsWith(".xml")) {
+                generator = new XMLReport();
+
+            } else {
+                throw new RuntimeException("Extension Not Supported: " + fileName);
+            }
+
+        } catch (RuntimeException ex) {
+            System.out.println(ex.getMessage());
+            return;
         }
 
         generator.generateReport(fileName);
+
 
 
         /*
