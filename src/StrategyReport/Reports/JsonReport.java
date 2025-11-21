@@ -16,7 +16,7 @@ public class JsonReport implements ReportGenerator {
             Gson gson = new Gson();
             JsonObject json = gson.fromJson(reader, JsonObject.class);
 
-            System.out.println("Conteúdo do JSON:");
+            System.out.println("Json content: ");
             System.out.println(json);
 
         } catch (Exception e) {

@@ -16,7 +16,7 @@ public class Main {
         IO.println("EXERCISE 2");
         IO.println("Strategy Report System");
 
-        String endFile = ".json";
+        String endFile = ".xml";
         String fileName = "src/resources/exempleFiles/dados" + endFile;
         ServiceReport service = new ServiceReport(fileName);
         ReportGenerator generator = null;
