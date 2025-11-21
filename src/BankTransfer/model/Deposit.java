@@ -1,6 +1,9 @@
 package BankTransfer.model;
 
-public abstract class Deposit extends BankTransfer {
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Deposit extends BankTransfer {
 
     private Double value;
 
@@ -29,7 +32,16 @@ public abstract class Deposit extends BankTransfer {
 
     @Override
     public void Processor() {
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
+        System.out.println(date.format(format));
     }
 
+    @Override
+    public String toString() {
+        return "Deposit{" +
+                "value=" + value +
+                '}';
+    }
 }

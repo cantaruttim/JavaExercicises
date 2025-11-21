@@ -33,4 +33,10 @@ public class Transfer  extends BankTransfer {
     }
 
 
+    @Override
+    public String toString() {
+        return "Transfer{" +
+                "value=" + value +
+                '}';
+    }
 }

@@ -1,3 +1,5 @@
+import BankTransfer.model.BankTransfer;
+import BankTransfer.model.Deposit;
 import PurchaseOrder.model.InternationalOrder;
 import PurchaseOrder.model.NationalOrder;
 import PurchaseOrder.model.OrderProcessor;
@@ -15,6 +17,9 @@ public class Main {
 
         IO.println("EXERCISE 3");
         IO.println("Bank Transfer");
+
+        Deposit deposit = new Deposit();
+        deposit.Processor();
 
         /*
 
