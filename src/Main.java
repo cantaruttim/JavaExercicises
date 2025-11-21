@@ -1,5 +1,6 @@
 import BankTransfer.model.BankTransfer;
 import BankTransfer.model.Deposit;
+import BankTransfer.model.Transfer;
 import PurchaseOrder.model.InternationalOrder;
 import PurchaseOrder.model.NationalOrder;
 import PurchaseOrder.model.OrderProcessor;
@@ -31,6 +32,15 @@ public class Main {
 
         System.out.println("Total value of deposits: " + total);
 
+        List<Transfer> transfer = new ArrayList<>();
+        transfer.add(new Transfer(150, "1234", "43221"));
+        transfer.add(new Transfer(550, "1234", "43221"));
+
+        double totalTransfered = transfer.stream()
+                .mapToDouble(Transfer::getValue)
+                .sum();
+
+        System.out.println("Total value of Transfers: " + totalTransfered);
 
         /*
 
