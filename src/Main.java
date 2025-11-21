@@ -11,6 +11,8 @@ import StrategyReport.model.ServiceReport;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,8 +20,16 @@ public class Main {
         IO.println("EXERCISE 3");
         IO.println("Bank Transfer");
 
-        Deposit deposit = new Deposit();
-        deposit.Processor();
+        List<Deposit> deposits = new ArrayList<>();
+        deposits.add(new Deposit(150.00));
+        deposits.add(new Deposit(250.50));
+        deposits.add(new Deposit(3250.50));
+
+        double total = deposits.stream()
+                .mapToDouble(Deposit::getValue)
+                .sum();
+
+        System.out.println("Total value of deposits: " + total);
 
 
         /*

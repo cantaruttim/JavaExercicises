@@ -5,43 +5,26 @@ import java.time.format.DateTimeFormatter;
 
 public class Deposit extends BankTransfer {
 
-    private Double value;
+    private double value;
 
-    public Deposit() {};
-    public Deposit(Double value) {
+    public Deposit(double value) {
         this.value = value;
-    };
+    }
 
-    public Double getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void deposit(Double value) {
-        Validate();
-    }
-
     @Override
-    public void Validate() {
-        if (this.value > this.value) {
-            System.out.println("Value not sufficient");
-        } else {
-            this.value += value;
+    public void validate() {
+        if (value <= 0) {
+            throw new IllegalArgumentException("Valor do depósito inválido");
         }
-
     }
 
     @Override
-    public void Processor() {
-        LocalDateTime date = LocalDateTime.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-
-        System.out.println(date.format(format));
-    }
-
-    @Override
-    public String toString() {
-        return "Deposit{" +
-                "value=" + value +
-                '}';
+    public void processor() {
+        // Aqui é onde de fato ocorre o depósito
+        System.out.println("Depósito de R$ " + value + " realizado com sucesso.");
     }
 }

@@ -3,14 +3,18 @@ package BankTransfer.model;
 
 public abstract class BankTransfer {
 
-    public void Execute() {}
+    public final void execute() {
+        validate();
+        processor();
+        logRegister();
+    }
 
-    public abstract void Validate();
+    public abstract void validate();
+    public abstract void processor();
 
-    public abstract void Processor();
-
-    public void LogRegister() {
-
+    private void logRegister() {
+        System.out.println("Operation executed at: " +
+                java.time.LocalDateTime.now());
     }
 
 }
