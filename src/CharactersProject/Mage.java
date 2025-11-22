@@ -1,7 +1,3 @@
 package CharactersProject;
 
-public class Mage extends Character {
-
-
-
-}
+public class Mage extends Character { }
