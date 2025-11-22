@@ -18,6 +18,14 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        IO.println("EXERCISE 4");
+        IO.println("Character - Subclasses and Weapon");
+
+
+
+
+
+        /*
         IO.println("EXERCISE 3");
         IO.println("Bank Transfer");
 
@@ -42,7 +50,7 @@ public class Main {
 
         System.out.println("Total value of Transfers: " + totalTransfered);
 
-        /*
+
 
         IO.println("EXERCISE 2");
         IO.println("Strategy Report System");
