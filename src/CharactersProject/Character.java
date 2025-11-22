@@ -1,6 +1,6 @@
 package CharactersProject;
 
-public abstract class Character {
+public class Character {
 
     private double life;
     private double strengh;
