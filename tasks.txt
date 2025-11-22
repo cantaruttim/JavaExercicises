@@ -1,0 +1,3 @@
+1;Study Java;false
+2;Study Project Patterns;true
+3;Play Elden Ring;false

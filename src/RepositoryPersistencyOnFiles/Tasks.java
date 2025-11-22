@@ -34,7 +34,7 @@ public class Tasks {
 
     @Override
     public String toString() {
-        return id + ';' + description + ';' + concluded;
+        return id + ";" + description + ";" + concluded;
     }
 
     public static Tasks fromString(String rows) {

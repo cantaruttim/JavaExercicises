@@ -4,6 +4,9 @@ import BankTransfer.model.Transfer;
 import PurchaseOrder.model.InternationalOrder;
 import PurchaseOrder.model.NationalOrder;
 import PurchaseOrder.model.OrderProcessor;
+import RepositoryPersistencyOnFiles.Interface.TaskRepository;
+import RepositoryPersistencyOnFiles.Repository.TaskRepositoryOnFile;
+import RepositoryPersistencyOnFiles.Service.TaskService;
 import StrategyReport.Interface.ReportGenerator;
 import StrategyReport.Reports.CSVReport;
 import StrategyReport.Reports.JsonReport;
@@ -18,12 +21,20 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        IO.println("EXERCISE 4");
-        IO.println("Character - Subclasses and Weapon");
+        IO.println("EXERCISE 7");
+        IO.println("Repository Persistency on File");
 
 
+        TaskRepository repo = new TaskRepositoryOnFile("tasks.txt");
+        TaskService service = new TaskService(repo);
 
+        service.createTask(1, "Study Java");
+        service.createTask(2, "Study Project Patterns");
+        service.createTask(3, "Play Elden Ring");
 
+        service.concludedTask(2);
+
+        service.loadTasks().forEach(System.out::println);
 
         /*
         IO.println("EXERCISE 3");
